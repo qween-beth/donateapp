@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Welcome, Admin</h1>
+    <h2>Donations:</h2>
+    <ul class="list-group">
+        {% for donation in donations %}
+        <li class="list-group-item">
+            <strong>Name:</strong> {{ donation.name }}<br>
+            <strong>Amount:</strong> {{ donation.amount }}<br>
+            {% if donation.approved %}
+                <strong>Status:</strong> Approved<br>
+            {% else %}
+                <a href="/approve/{{ donation.id }}" class="btn btn-primary">Approve</a><br>
+                <strong>Status:</strong> Pending<br>
+            {% endif %}
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

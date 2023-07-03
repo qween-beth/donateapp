@@ -1,0 +1,33 @@
+Create venv
+python -m venv venv
+
+Activate virtual environment
+.\venv\Scripts\Activate.ps1
+
+iNSTALL FLASK
+pip install flask
+
+pip install flask_sqlalchemy flask_bcrypt
+
+Generate secret key with secret.py
+
+
+
+
+
+
+This updated app.py file includes the following changes:
+
+Added necessary imports for Flask-SQLAlchemy and Flask-Bcrypt.
+Configured the SQLAlchemy database URI to use a SQLite database file named donation.db.
+Created two database models: User for user authentication and Donation for storing donation data.
+Implemented user registration and login functionality using the User model and password hashing with Flask-Bcrypt.
+Modified the /donate route to store donations in the Donation table.
+Updated the /admin route to fetch all donations from the Donation table for the admin view.
+Added an /approve/<id> route to approve donations based on the provided donation ID.
+Created new routes for user registration (/signup) and login (/login) along with their corresponding submission routes.
+Modified the /logout route to clear the user and admin session variables.
+Created the necessary HTML templates: index.html, admin.html, thankyou.html, signup.html, and login.html.
+Make sure to create the HTML templates in the same directory as the app.py file.
+
+Once you've made these adjustments, you can run the Flask app using flask run or python app.py, and access it in your web browser at http://localhost:5000/.

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Amount Raised</title>
+</head>
+<body>
+    <h1>Total Amount Raised</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for currency, total_amount in total_amounts %}
+            <tr>
+                <td>{{ currency }}</td>
+                <td>{{ total_amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
